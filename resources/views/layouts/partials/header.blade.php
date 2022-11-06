@@ -1,9 +1,12 @@
 <header class="fixed inset-x-0 bg-white shadow-md z-[100]">
     <div class="container mx-auto px-4 py-4">
         <nav class="flex items-center justify-between">
-            <a class="flex items-center gap-2" href="/" title="PakdeKun">
-                <img class="h-9" src="/image/PakdeKun.png" alt="Logo PakdeKun" loading="lazy">
-                <h1 class="text-xl font-semibold">Pakde<span class="font-normal">Kun</span></h1>
+            <a class="flex items-center gap-2" href="/"
+                title="{{ strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')) }}">
+                <img class="h-9" src="{{ App\Helpers\AppHelper::instance()->getOptions('logo_url') }}"
+                    alt="Logo {{ strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')) }}"
+                    loading="lazy">
+                <h1 class="text-xl">{!! App\Helpers\AppHelper::instance()->getOptions('site_name') !!}</h1>
             </a>
             <button id="primary-nav-button" class="block sm:hidden">
                 <svg class="w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

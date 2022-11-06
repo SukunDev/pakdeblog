@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title', $post->title . ' | ' . App\Helpers\AppHelper::instance()->getOptions('site_name'))
+@section('title', $post->title . ' | ' . strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')))
 @section('meta_keywords', $post->meta_keyword)
 @section('meta_description', $post->meta_description)
 @section('meta_author', $post->user->username)
@@ -59,6 +59,7 @@
                 {!! $post->body !!}
             </div>
             <hr>
+            @include('layouts.partials.socialmediashare')
             @if ($post->tags && $post->tags->count() > 0)
                 <div class="flex flex-wrap items-center gap-2">
                     @if ($post->tags->count() > 1)

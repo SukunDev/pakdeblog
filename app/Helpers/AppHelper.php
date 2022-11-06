@@ -2,10 +2,31 @@
 
 namespace App\Helpers;
 
+use Carbon\Carbon;
 use App\Models\Options;
 
 class AppHelper
 {
+    public function makeChartData($pageViewMonth)
+    {
+        $dataChart = [];
+        for ($x = 0; $x < date('t'); $x++) {
+            $count = 0;
+            foreach ($pageViewMonth as $viewDays) {
+                if (
+                    Carbon::parse($viewDays->created_at)->format('d') ==
+                    $x + 1
+                ) {
+                    $count++;
+                }
+            }
+            $dataChart[] = [
+                'date' => Carbon::parse(now())->format('Y-m-') . ($x + 1),
+                'views' => $count,
+            ];
+        }
+        return $dataChart;
+    }
     public function getOptions($name)
     {
         $setting = Options::where('name', $name)->first();

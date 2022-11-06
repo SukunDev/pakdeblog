@@ -9,7 +9,7 @@
             </ul>
             <div class="text-center">
                 <p class="text-sm">Copyright &copy; 2022 <a class="hover:text-blue-500 transition duration-300"
-                        href="/">{{ AppHelper::instance()->getOptions('site_name') }}</a> All Right Reserved</p>
+                        href="/">{!! AppHelper::instance()->getOptions('site_name') !!}</a> All Right Reserved</p>
             </div>
         </nav>
     </div>

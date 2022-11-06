@@ -15,7 +15,10 @@ class OptionsSeeder extends Seeder
     public function run()
     {
         Options::create(['name' => 'admin_site', 'value' => 'PakdeKun']);
-        Options::create(['name' => 'site_name', 'value' => 'PakdeKun']);
+        Options::create([
+            'name' => 'site_name',
+            'value' => '<strong>Pakde</strong>Kun',
+        ]);
         Options::create([
             'name' => 'description',
             'value' => 'pakdekun situs',
@@ -27,6 +30,10 @@ class OptionsSeeder extends Seeder
         Options::create([
             'name' => 'site_url',
             'value' => 'http://localhost:3000',
+        ]);
+        Options::create([
+            'name' => 'logo_url',
+            'value' => '/image/PakdeKun.png',
         ]);
         Options::create([
             'name' => 'header_menu',

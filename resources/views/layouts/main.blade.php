@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="preload" href="/image/PakdeKun.png" as="image">
+    <link rel="preload" href="{{ App\Helpers\AppHelper::instance()->getOptions('logo_url') }}" as="image">
     <meta name="theme-color" content="#f3f4f6">
-    <title>@yield('title', App\Helpers\AppHelper::instance()->getOptions('site_name'))</title>
-    <meta name="title" content="@yield('title', App\Helpers\AppHelper::instance()->getOptions('site_name'))">
+    <title>@yield('title', strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')))</title>
+    <meta name="title" content="@yield('title', strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')))">
     <meta name="description" content="@yield('meta_description', App\Helpers\AppHelper::instance()->getOptions('description'))">
     <meta name="keywords" content="@yield('meta_keywords', App\Helpers\AppHelper::instance()->getOptions('keyword'))">
     <meta name="author" content="@yield('meta_author', App\Helpers\AppHelper::instance()->getOptions('admin_site'))">
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('title', App\Helpers\AppHelper::instance()->getOptions('site_name'))">
+    <meta property="og:title" content="@yield('title', strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')))">
     <meta property="og:description" content="@yield('meta_description', App\Helpers\AppHelper::instance()->getOptions('description'))">
     <meta property="og:image" content="@yield('meta_thumbnail', env('APP_URL') . '/image/thumbnail_og.png')">
 
     {{-- Twitter --}}
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
-    <meta property="twitter:title" content="@yield('title', App\Helpers\AppHelper::instance()->getOptions('site_name'))">
+    <meta property="twitter:title" content="@yield('title', strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')))">
     <meta property="twitter:description" content="@yield('meta_description', App\Helpers\AppHelper::instance()->getOptions('description'))">
     <meta property="twitter:image" content="@yield('meta_thumbnail', env('APP_URL') . '/image/thumbnail_og.png')">
     @php
@@ -68,6 +68,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+    {!! App\Helpers\AppHelper::instance()->getOptions('footer_insert_code') !!}
 </body>
 
 </html>
