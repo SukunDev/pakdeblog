@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-700 bg-gray-50 font-Poppins;
+  }
+  .article {
+    @apply prose max-w-none prose-sm sm:prose-base md:prose-lg prose-gray prose-headings:text-gray-700 prose-a:text-gray-700 hover:prose-a:text-blue-500 prose-a:transition prose-a:duration-300 prose-p:text-gray-600 prose-a:no-underline prose-strong:text-gray-700 prose-strong:font-medium prose-blockquote:text-gray-700;
+  }
+}
