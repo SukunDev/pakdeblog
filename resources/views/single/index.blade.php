@@ -88,4 +88,16 @@
         <div id="preview-image-show" class="panzoom-image fixed inset-0 m-auto w-fit h-fit z-[999]">
         </div>
     </div>
+    <script>
+        var inline_related_post = <?php
+        $newRelatedPost = [];
+        foreach ($related_post as $post) {
+            $newRelatedPost[] = [
+                'title' => $post->title,
+                'slug' => $post->slug,
+            ];
+        }
+        echo json_encode($newRelatedPost);
+        ?>
+    </script>
 @endsection

@@ -31,7 +31,7 @@ class DashboardController extends Controller
             'page_view_month' => $pageViewMonth,
             'page_view_week' => $pageViewWeek,
             'data_chart' => json_encode($dataChart),
-            'jumlah_article' => 12,
+            'jumlah_article' => Posts::whereNotNull('published_at')->count(),
             'popular_post' => $popularPost,
         ]);
     }

@@ -42,6 +42,9 @@ class BlogController extends Controller
     }
     public function singlePost(Posts $post)
     {
+        if (!$post->published_at) {
+            return abort(404);
+        }
         $relatedPost = Posts::whereNotNull('published_at')
             ->where('category_id', $post->category->id)
             ->inRandomOrder()

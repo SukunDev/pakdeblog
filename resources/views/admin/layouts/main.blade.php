@@ -17,13 +17,14 @@
 
 <body>
     @include('admin.layouts.partials.sidebar')
-    <div class="relative ml-64 overflow-x-hidden">
+    <div class="relative ml-64">
         @include('admin.layouts.partials.header')
-        <div class="space-y-8 px-4 py-4">
+        <div class="space-y-8 px-4 py-4 overflow-x-hidden">
             <h2 class="text-xl font-medium">{{ $title }}</h2>
             @yield('content')
         </div>
     </div>
+    @include('layouts.partials.alert')
     <script src="{{ asset('js/admin.js') }}"></script>
 </body>
 
