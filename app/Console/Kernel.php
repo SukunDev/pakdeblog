@@ -52,7 +52,7 @@ class Kernel extends ConsoleKernel
                 $sitemap->writeToFile(public_path('sitemap.xml'));
             })
             ->description('Update sitemap.xml')
-            ->everyMinute();
+            ->everyFifteenMinutes();
         $schedule
             ->call(function () {
                 PostView::truncate();
