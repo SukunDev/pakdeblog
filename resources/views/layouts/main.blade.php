@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/tokyo-night-dark.min.css"
+        integrity="sha512-dSQLLtgaq2iGigmy9xowRshaMzUHeiIUTvJW/SkUpb1J+ImXOPNGAI7ZC8V5/PiN/XN83B8uIk4qET7AMhdC5Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preload" href="{{ App\Helpers\AppHelper::instance()->getOptions('logo_url') }}" as="image">
     @yield('preload')
     <meta name="theme-color" content="#f3f4f6">
@@ -46,6 +50,10 @@
         }
     @endphp
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    @if (!empty($blog_post_schema))
+        {!! $blog_post_schema !!}
+    @endif
     {!! App\Helpers\AppHelper::instance()->getOptions('header_insert_code') !!}
 </head>
 

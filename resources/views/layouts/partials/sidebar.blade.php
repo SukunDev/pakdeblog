@@ -1,4 +1,3 @@
-{!! App\Helpers\AppHelper::instance()->getOptions('sidebar_insert_code') !!}
 <div
     class="text-xl font-medium text-gray-600 after:flex after:bg-blue-500 after:my-0.5 after:h-1 after:w-24 after:rounded-md">
     <p>Popular Article</p>
@@ -64,3 +63,4 @@
         </article>
     @endforeach
 </div>
+{!! App\Helpers\AppHelper::instance()->getOptions('sidebar_insert_code') !!}

@@ -13,6 +13,7 @@ class SettingsController extends Controller
         $title = 'Settings Umum';
         $settings = [
             'site_name' => AppHelper::instance()->getOptions('site_name'),
+            'site_url' => AppHelper::instance()->getOptions('site_url'),
             'description' => AppHelper::instance()->getOptions('description'),
             'keyword' => AppHelper::instance()->getOptions('keyword'),
             'logo_url' => AppHelper::instance()->getOptions('logo_url'),

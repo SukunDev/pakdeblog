@@ -13,6 +13,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "spatie/laravel-sitemap": "^5.9",
+        "spatie/schema-org": "^3.9",
         "unisharp/laravel-filemanager": "^2.5"
     },
     "require-dev": {

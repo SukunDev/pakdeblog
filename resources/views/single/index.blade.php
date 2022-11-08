@@ -90,10 +90,11 @@
     <div id="preview-image" class="hidden">
         <div id="back-image" class="fixed inset-0 bg-black/70 z-[998]">
         </div>
-        <div id="preview-image-show" class="panzoom-image fixed inset-0 m-auto w-fit h-fit z-[999]">
+        <div id="preview-image-show" class="fixed inset-0 m-auto w-fit h-fit z-[999]">
         </div>
     </div>
     <script>
+        hljs.highlightAll();
         var inline_related_post = <?php
         $newRelatedPost = [];
         foreach ($related_post as $post) {

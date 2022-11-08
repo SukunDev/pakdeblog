@@ -13,6 +13,14 @@
             </div>
             <div class="flex flex-col">
                 <div class="flex flex-col">
+                    <label class="capitalize font-medium" for="siteUrlForm">URL</label>
+                    <input
+                        class="px-4 py-2 rounded-md bg-gray-200 focus:outline-gray-200 focus:bg-white focus:shadow-md transition duration-300"
+                        type="text" name="site_url" id="siteUrlForm" value="{{ $settings['site_url'] }}" required>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <div class="flex flex-col">
                     <label class="capitalize font-medium" for="deskripsiForm">deskripsi</label>
                     <textarea id="deskripsiForm" rows="3"
                         class="px-4 py-2 rounded-md bg-gray-100 focus:outline-gray-200 focus:bg-white focus:shadow-md transition duration-300"

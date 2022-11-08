@@ -29,7 +29,7 @@ class OptionsSeeder extends Seeder
         ]);
         Options::create([
             'name' => 'site_url',
-            'value' => 'http://localhost:3000',
+            'value' => env('APP_URL'),
         ]);
         Options::create([
             'name' => 'logo_url',
