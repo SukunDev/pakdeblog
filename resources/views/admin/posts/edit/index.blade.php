@@ -4,7 +4,6 @@
         <div class="px-4 py-4 rounded-md bg-white shadow-md">
             <form class="space-y-4" action="/{{ Request::path() }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="post_id" id="postIdForm" value="">
                 <div class="flex flex-col">
                     <label class="capitalize font-medium" for="titleForm">Title</label>
                     <input
@@ -142,16 +141,17 @@
             reader.readAsDataURL(event.target.files[0]);
         };
         $(document).ready(function() {
+            var permalinkSlug = ""
             $('#titleForm').on('change', function() {
                 fetch('/api/posts/checkSlug?title=' + $(this).val())
                     .then(response => response.json())
                     .then(function(data) {
-                        console.log(data.slug);
-                        $('#slugForm').val(data.slug)
+                        permalinkSlug = data.slug
+                        $('#slugForm').val(permalinkSlug)
                         var permalink = $('#permalink')
                         permalink.find('span').text(
-                            "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/" +
-                            data.slug)
+                            "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/p/" +
+                            permalinkSlug)
                         permalink.show()
                     })
             });
@@ -160,21 +160,25 @@
                 $(this).hide()
                 var permalink = $('#permalink')
                 permalink.find('span').text(
-                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/")
+                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/p/")
             })
             $('#permalink-ok').on('click', function() {
+                permalinkSlug = $('#slugForm').val()
                 var permalink = $('#permalink')
                 permalink.find('span').text(
-                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/" + $('#slugForm')
-                    .val())
+                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/p/" +
+                    permalinkSlug
+                )
                 $('#edit-permalink').hide()
                 $('#permalink-edit').show()
             })
             $('#permalink-cancel').on('click', function() {
                 var permalink = $('#permalink')
+                $('#slugForm').val(permalinkSlug)
                 permalink.find('span').text(
-                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/" + $('#slugForm')
-                    .val())
+                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/p/" +
+                    permalinkSlug
+                )
                 $('#edit-permalink').hide()
                 $('#permalink-edit').show()
             })

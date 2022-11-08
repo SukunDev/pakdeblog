@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="preload" href="{{ App\Helpers\AppHelper::instance()->getOptions('logo_url') }}" as="image">
+    @yield('preload')
     <meta name="theme-color" content="#f3f4f6">
     <title>@yield('title', strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')))</title>
     <meta name="title" content="@yield('title', strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')))">
@@ -44,6 +45,7 @@
             echo '<meta name="baidu-site-verification" content="' . $meta_bing_verification . '" />';
         }
     @endphp
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     {!! App\Helpers\AppHelper::instance()->getOptions('header_insert_code') !!}
 </head>
 

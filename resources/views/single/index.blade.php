@@ -4,6 +4,11 @@
 @section('meta_description', $post->meta_description)
 @section('meta_author', $post->user->username)
 @section('meta_thumbnail', $post->thumbnail)
+@section('preload')
+    @if ($post->thumbnail)
+        <link rel="preload" href="{{ $post->thumbnail }}" as="image">
+    @endif
+@endsection
 @section('content')
     <div class="flex flex-col">
         {{-- Breadcrumbs --}}
@@ -43,7 +48,7 @@
             </ul>
         </nav>
         <div class="space-y-4 mt-8">
-            <h2 class="text-xl font-semibold text-blue-500">{{ $post->title }}</h2>
+            <h1 class="text-xl font-semibold text-blue-500">{{ $post->title }}</h1>
             @if ($post->thumbnail)
                 <div class="relative">
                     <div class="aspect-w-16 aspect-h-9">

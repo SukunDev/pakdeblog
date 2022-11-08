@@ -27,6 +27,37 @@ class AppHelper
         }
         return $dataChart;
     }
+    public function updateOptions($name, $value)
+    {
+        if (!$value) {
+            $value = '';
+        }
+        $setting = Options::where('name', $name)->first();
+        if (!$setting) {
+            if (is_array($value)) {
+                $setting->create([
+                    'name' => $name,
+                    'value' => json_encode($value, true),
+                ]);
+                return $setting;
+            }
+            $setting->create([
+                'name' => $name,
+                'value' => $value,
+            ]);
+            return $setting;
+        }
+        if (is_array($value)) {
+            $setting->update([
+                'value' => json_encode($value, true),
+            ]);
+            return $setting;
+        }
+        $setting->update([
+            'value' => $value,
+        ]);
+        return $setting;
+    }
     public function getOptions($name)
     {
         $setting = Options::where('name', $name)->first();

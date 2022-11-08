@@ -3,11 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Blog\BlogController;
-use App\Http\Controllers\Admin\Dashboard\DashboardController;
 use App\Http\Controllers\Admin\Pages\PagesController;
-use App\Http\Controllers\Admin\Posts\Categories\CategoriesController;
 use App\Http\Controllers\Admin\Posts\PostsController;
 use App\Http\Controllers\Admin\Posts\Tags\TagsController;
+use App\Http\Controllers\Admin\Settings\SettingsController;
+use App\Http\Controllers\Admin\Dashboard\DashboardController;
+use App\Http\Controllers\Admin\Posts\Categories\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,26 @@ Route::prefix('admin')
         Route::prefix('pages')->group(function () {
             Route::get('/', [PagesController::class, 'index']);
             Route::get('/new', [PagesController::class, 'createIndex']);
+            Route::post('/new', [PagesController::class, 'addPages']);
+            Route::get('/edit/{page:slug}', [
+                PagesController::class,
+                'editIndex',
+            ]);
+            Route::post('/edit/{page:slug}', [
+                PagesController::class,
+                'changePages',
+            ]);
+            Route::get('/view/{page:slug}', [
+                PagesController::class,
+                'viewIndex',
+            ]);
+            Route::get('/delete/{id}', [PagesController::class, 'deletePages']);
+        });
+        Route::prefix('settings')->group(function () {
+            Route::get('/', [SettingsController::class, 'index']);
+            Route::post('/', [SettingsController::class, 'changeSiteInfo']);
+            Route::get('/menu', [SettingsController::class, 'menuIndex']);
+            Route::post('/menu', [SettingsController::class, 'changeMenu']);
         });
         Route::group(
             [
@@ -79,5 +100,7 @@ Route::prefix('admin')
     });
 
 Route::get('/', [BlogController::class, 'index']);
-Route::get('/{name}/{value}', [BlogController::class, 'filterIndex']);
+Route::get('/contact', [BlogController::class, 'contactIndex']);
+Route::get('/p/{page:slug}', [BlogController::class, 'singlePages']);
 Route::get('/{post:slug}', [BlogController::class, 'singlePost']);
+Route::get('/{name}/{value}', [BlogController::class, 'filterIndex']);

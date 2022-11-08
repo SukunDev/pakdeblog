@@ -6,7 +6,11 @@
                 <img class="h-9" src="{{ App\Helpers\AppHelper::instance()->getOptions('logo_url') }}"
                     alt="Logo {{ strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')) }}"
                     loading="lazy">
-                <h1 class="text-xl">{!! App\Helpers\AppHelper::instance()->getOptions('site_name') !!}</h1>
+                @if (Request::is('/'))
+                    <h1 class="text-xl">{!! App\Helpers\AppHelper::instance()->getOptions('site_name') !!}</h1>
+                @else
+                    <p class="text-xl">{!! App\Helpers\AppHelper::instance()->getOptions('site_name') !!}</p>
+                @endif
             </a>
             <button id="primary-nav-button" class="block sm:hidden">
                 <svg class="w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

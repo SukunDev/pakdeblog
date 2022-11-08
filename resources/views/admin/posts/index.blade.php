@@ -35,6 +35,15 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                                    @if ($posts->count() < 1)
+                                        <tr
+                                            class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100 font-medium">
+                                            <td colspan="4"
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-400 text-center">
+                                                Tidak ada data di temukan
+                                            </td>
+                                        </tr>
+                                    @endif
                                     @foreach ($posts as $post)
                                         <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">

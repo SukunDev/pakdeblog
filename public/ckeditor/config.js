@@ -11,29 +11,60 @@ CKEDITOR.editorConfig = function (config) {
   // The toolbar groups arrangement, optimized for two toolbar rows.
   config.width = '100%'
   config.height = '70vh'
-  config.extraPlugins = ['wordcount', 'codesnippet']
-  config.toolbarGroups = [
-    { name: 'clipboard', groups: ['clipboard', 'undo'] },
-    { name: 'editing', groups: ['find', 'selection', 'spellchecker'] },
-    { name: 'links' },
-    { name: 'insert' },
-    { name: 'forms' },
-    { name: 'tools' },
-    { name: 'document', groups: ['mode', 'document', 'doctools'] },
-    { name: 'others' },
+  config.extraPlugins = ['wordcount', 'codesnippet', 'codeTag']
+  config.toolbar = [
+    {
+      name: 'clipboard',
+      items: [
+        'Undo',
+        'Redo',
+        '-',
+        'Cut',
+        'Copy',
+        'Paste',
+        'PasteText',
+        'PasteFromWord',
+      ],
+    },
+    { name: 'editing', items: ['Scayt'] },
+    { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
+    {
+      name: 'insert',
+      items: [
+        'Image',
+        'Table',
+        'HorizontalRule',
+        'SpecialChar',
+        'Code',
+        'CodeSnippet',
+      ],
+    },
+    {
+      name: 'code',
+      items: ['Code', 'CodeSnippet'],
+    },
+    { name: 'tools', items: ['Maximize'] },
+    { name: 'document', items: ['Source'] },
     '/',
-    { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+    {
+      name: 'basicstyles',
+      items: ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat'],
+    },
     {
       name: 'paragraph',
-      groups: ['list', 'indent', 'blocks', 'align', 'bidi'],
+      items: [
+        'NumberedList',
+        'BulletedList',
+        '-',
+        'Outdent',
+        'Indent',
+        '-',
+        'Blockquote',
+      ],
     },
-    { name: 'styles' },
-    { name: 'colors' },
-    { name: 'about' },
+    { name: 'styles', items: ['Styles', 'Format'] },
+    { name: 'about', items: ['About'] },
   ]
-
-  config.embed_provider =
-    '//iframe.ly/api/oembed?url={url}&callback={callback}&api_key=09dd24a4711e8e579b3115'
 
   // Remove some buttons provided by the standard plugins, which are
   // not needed in the Standard(s) toolbar.

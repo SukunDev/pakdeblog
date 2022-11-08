@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Blog;
 
+use App\Models\Pages;
 use App\Models\Posts;
 use App\Models\PostView;
-use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -68,6 +68,30 @@ class BlogController extends Controller
             'post' => $post,
             'popular_post' => $popularPost,
             'related_post' => $relatedPost,
+        ]);
+    }
+    public function singlePages(Pages $page)
+    {
+        if (!$page->published_at) {
+            return abort(404);
+        }
+        $popularPost = Posts::whereNotNull('published_at')
+            ->latest('view_count')
+            ->limit(3)
+            ->get();
+        return view('single.pages.index', [
+            'page' => $page,
+            'popular_post' => $popularPost,
+        ]);
+    }
+    public function contactIndex()
+    {
+        $popularPost = Posts::whereNotNull('published_at')
+            ->latest('view_count')
+            ->limit(3)
+            ->get();
+        return view('single.contact.index', [
+            'popular_post' => $popularPost,
         ]);
     }
 }

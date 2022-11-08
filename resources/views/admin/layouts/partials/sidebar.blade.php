@@ -57,7 +57,10 @@
                 [
                     'name' => 'settings',
                     'path' => 'admin/settings',
-                    'dropdowns' => [['name' => 'umum', 'href' => 'admin/settings']],
+                    'dropdowns' => [
+                        ['name' => 'umum', 'href' => 'admin/settings'],
+                        ['name' => 'menu', 'href' => 'admin/settings/menu'],
+                    ],
                 ])
                 <svg class="w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->

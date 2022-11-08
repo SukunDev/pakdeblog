@@ -18,6 +18,8 @@ class CreatePagesTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('body');
+            $table->foreignId('user_id')->constrained('users');
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }

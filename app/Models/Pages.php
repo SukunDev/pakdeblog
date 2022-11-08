@@ -2,17 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pages extends Model
 {
     use HasFactory;
+    use Sluggable;
     protected $table = 'pages';
     protected $guarded = ['id'];
 
-    public function user()
+    public function sluggable(): array
     {
-        return $this->belongsTo(User::class);
+        return [
+            'slug' => [
+                'source' => 'title',
+            ],
+        ];
     }
 }
