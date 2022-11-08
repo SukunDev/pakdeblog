@@ -11,7 +11,7 @@ CKEDITOR.editorConfig = function (config) {
   // The toolbar groups arrangement, optimized for two toolbar rows.
   config.width = '100%'
   config.height = '70vh'
-  config.extraPlugins = ['wordcount', 'codesnippet', 'embed', 'embedbase']
+  config.extraPlugins = ['wordcount', 'codesnippet']
   config.toolbarGroups = [
     { name: 'clipboard', groups: ['clipboard', 'undo'] },
     { name: 'editing', groups: ['find', 'selection', 'spellchecker'] },

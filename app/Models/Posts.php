@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Posts extends Model
 {
     use HasFactory;
+    use Sluggable;
     protected $table = 'posts';
     protected $guarded = ['id'];
 
@@ -78,5 +80,13 @@ class Posts extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title',
+            ],
+        ];
     }
 }

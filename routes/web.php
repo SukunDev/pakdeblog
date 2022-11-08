@@ -33,8 +33,30 @@ Route::prefix('admin')
         Route::prefix('posts')->group(function () {
             Route::get('/', [PostsController::class, 'index']);
             Route::get('/new', [PostsController::class, 'createIndex']);
+            Route::post('/new', [PostsController::class, 'insertPost']);
+            Route::get('/edit/{post:slug}', [
+                PostsController::class,
+                'editIndex',
+            ]);
+            Route::post('/edit/{post:slug}', [
+                PostsController::class,
+                'changePost',
+            ]);
             Route::get('/category', [CategoriesController::class, 'index']);
+            Route::post('/category', [
+                CategoriesController::class,
+                'createCategory',
+            ]);
+            Route::get('/category/{id}/delete', [
+                CategoriesController::class,
+                'deleteCategory',
+            ]);
             Route::get('/tags', [TagsController::class, 'index']);
+            Route::post('/tags', [TagsController::class, 'createTags']);
+            Route::get('/tags/{id}/delete', [
+                TagsController::class,
+                'deleteTags',
+            ]);
             Route::get('/view/{post:slug}', [
                 PostsController::class,
                 'viewIndex',
@@ -45,6 +67,15 @@ Route::prefix('admin')
             Route::get('/', [PagesController::class, 'index']);
             Route::get('/new', [PagesController::class, 'createIndex']);
         });
+        Route::group(
+            [
+                'prefix' => 'laravel-filemanager',
+                'middleware' => ['web', 'auth'],
+            ],
+            function () {
+                \UniSharp\LaravelFilemanager\Lfm::routes();
+            }
+        );
     });
 
 Route::get('/', [BlogController::class, 'index']);

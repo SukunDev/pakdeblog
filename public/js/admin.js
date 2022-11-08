@@ -32,4 +32,12 @@ $(document).ready(function () {
         $(this).parent().remove()
       })
   })
+  $('#tambahButtonKategori').on('click', function () {
+    $('#kategoriPanel').animate(
+      {
+        height: 'toggle',
+      },
+      300,
+    )
+  })
 })
