@@ -40,4 +40,28 @@ $(document).ready(function () {
       300,
     )
   })
+  $('#sticky-header-menu-button').on('click', function () {
+    var sidebar = $('#sidebar')
+    $('#sidebar-background-black').animate({ opacity: 'toggle' }, 300)
+    if (sidebar.hasClass('-translate-x-full')) {
+      sidebar.removeClass('-translate-x-full')
+      return
+    }
+  })
+  $('#sidebar-background-black').on('click', function () {
+    $(this).animate({ opacity: 'toggle' }, 300)
+    var sidebar = $('#sidebar')
+    if (!sidebar.hasClass('-translate-x-full')) {
+      sidebar.addClass('-translate-x-full')
+      return
+    }
+  })
+  $('#profile-button').on('click', function () {
+    $('#profile-panel').animate(
+      {
+        height: 'toggle',
+      },
+      300,
+    )
+  })
 })

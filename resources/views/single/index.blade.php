@@ -69,13 +69,13 @@
                 <div class="flex flex-wrap items-center gap-2">
                     @if ($post->tags->count() > 1)
                         @foreach ($post->tags as $tag)
-                            <a href="/tag/{{ $tag->slug }}" class="px-4 py-1.5 rounded-lg bg-blue-500 text-white text-sm"
-                                title="{{ $tag->name }}">
+                            <a href="/tags/{{ $tag->slug }}"
+                                class="px-4 py-1.5 rounded-lg bg-blue-500 text-white text-sm" title="{{ $tag->name }}">
                                 {{ $tag->name }}
                             </a>
                         @endforeach
                     @else
-                        <a href="/tag/{{ $post->tags[0]->slug }}"
+                        <a href="/tags/{{ $post->tags[0]->slug }}"
                             class="px-4 py-1.5 rounded-lg bg-blue-500 text-white text-sm"
                             title="{{ $post->tags[0]->name }}">
                             {{ $post->tags[0]->name }}

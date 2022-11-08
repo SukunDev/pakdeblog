@@ -13,7 +13,7 @@ $(document).ready(function () {
       {
         opacity: 'toggle',
       },
-      200,
+      300,
     )
   })
   $('#primary-nav-button').on('click', function () {

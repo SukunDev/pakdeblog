@@ -26,6 +26,7 @@ Route::prefix('auth')->group(function () {
         ->middleware('guest')
         ->name('login');
     Route::post('/signin', [AuthController::class, 'loginPost']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
 Route::prefix('admin')
     ->middleware('auth')

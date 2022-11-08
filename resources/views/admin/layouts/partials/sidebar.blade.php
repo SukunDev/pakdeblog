@@ -1,6 +1,9 @@
-<div id="sidebar" class="fixed inset-y-0 w-64 bg-slate-700 text-white shadow-md z-[100]">
+<div id="sidebar-background-black" class="fixed inset-0 bg-black opacity-50 sm:hidden z-[99]" style="display: none;">
+</div>
+<div id="sidebar"
+    class="fixed inset-y-0 w-64 -translate-x-full sm:translate-x-0 bg-slate-700 text-white shadow-md z-[100] transition duration-300">
     <div class="sticky w-full bg-black/[0.15]">
-        <div class="flex items-center gap-4 px-4 py-4">
+        <div class="flex items-center gap-4 px-4 py-[18px]">
             <img class="h-9" src="{{ App\Helpers\AppHelper::instance()->getOptions('logo_url') }}"
                 alt="Logo {{ strip_tags(App\Helpers\AppHelper::instance()->getOptions('site_name')) }}" loading="lazy">
             <h1 class="text-xl">{!! App\Helpers\AppHelper::instance()->getOptions('site_name') !!}</h1>

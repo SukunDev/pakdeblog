@@ -17,7 +17,7 @@
 
 <body>
     @include('admin.layouts.partials.sidebar')
-    <div class="relative ml-64">
+    <div class="relative ml-0 sm:ml-64">
         @include('admin.layouts.partials.header')
         <div class="space-y-8 px-4 py-4 overflow-x-hidden">
             <h2 class="text-xl font-medium">{{ $title }}</h2>

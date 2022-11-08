@@ -46,6 +46,9 @@ class BlogController extends Controller
     }
     public function filterIndex($name, $value)
     {
+        if ($name != 'author' && $name != 'tags' && $name != 'category') {
+            return redirect('/');
+        }
         $filter = [$name => $value];
         $posts = Posts::whereNotNull('published_at')
             ->filter($filter)

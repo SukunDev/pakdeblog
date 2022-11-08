@@ -1,13 +1,15 @@
 @extends('layouts.main')
 @section('preload')
-    @if ($posts[0]->thumbnail)
-        <link rel="preload" href="{{ $posts[0]->thumbnail }}" as="image">
-    @endif
-    @foreach ($posts->skip(1) as $post)
-        @if ($loop->index < 2 && $post->thumbnail)
-            <link rel="preload" href="{{ $post->thumbnail }}" as="image">
+    @if ($posts->count() > 0)
+        @if ($posts[0]->thumbnail)
+            <link rel="preload" href="{{ $posts[0]->thumbnail }}" as="image">
         @endif
-    @endforeach
+        @foreach ($posts->skip(1) as $post)
+            @if ($loop->index < 2 && $post->thumbnail)
+                <link rel="preload" href="{{ $post->thumbnail }}" as="image">
+            @endif
+        @endforeach
+    @endif
 @endsection
 @section('content')
     @if ($posts->count() > 0)
