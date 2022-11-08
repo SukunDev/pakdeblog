@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call(OptionsSeeder::class);
         User::create([
-            'email' => 'sukundev32@gmail.com',
+            'email' => 'xxxxxxxxx@gmail.com',
             'name' => 'PakdeKun',
-            'username' => 'KadalChan',
+            'username' => 'PakdeKun',
             'password' => bcrypt('LutfiAN32!'),
         ]);
         Categories::create([

@@ -37,5 +37,7 @@
         <div id="preview-image-show" class="fixed inset-0 m-auto w-fit h-fit z-[999]">
         </div>
     </div>
-    hljs.highlightAll();
+    <script>
+        hljs.highlightAll();
+    </script>
 @endsection

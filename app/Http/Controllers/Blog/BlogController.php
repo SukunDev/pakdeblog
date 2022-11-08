@@ -15,7 +15,7 @@ class BlogController extends Controller
     public function index()
     {
         $posts = Posts::whereNotNull('published_at')
-            ->latest('published_at')
+            ->latest()
             ->filter(request(['search']))
             ->paginate(5)
             ->withQueryString();
@@ -52,7 +52,7 @@ class BlogController extends Controller
         $filter = [$name => $value];
         $posts = Posts::whereNotNull('published_at')
             ->filter($filter)
-            ->latest('published_at')
+            ->latest()
             ->paginate(5);
         $popularPost = Posts::whereNotNull('published_at')
             ->latest('view_count')

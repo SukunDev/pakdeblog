@@ -54,7 +54,7 @@ function addInlineRelatedPost(post) {
     }
     if (post.length > 1) {
       if (paragraph.length > 6) {
-        if (idx == 1) {
+        if (idx == 3) {
           $(
             '<div id="inline-related-post" class="not-prose"><p>Baca Juga : <a class="hover:text-blue-500 font-normal transition duration-300" href="/' +
               post[1].slug +

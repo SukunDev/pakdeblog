@@ -20,7 +20,8 @@
     } @endphp <div class="flex items-center space-x-1 justify-center">
         @if ($paginator->currentPage() > 1)
             <a href="{{ $paginator->url($paginator->currentPage() - 1) }}"
-                class="px-1.5 md:px-2 py-2 font-bold fill-gray-600 bg-gray-50 rounded-md hover:bg-slate-700 border border-slate-700 hover:fill-white transition duration-300">
+                class="px-1.5 md:px-2 py-2 font-bold fill-gray-600 bg-gray-50 rounded-md hover:bg-slate-700 border border-slate-700 hover:fill-white transition duration-300"
+                aria-label="Previous Button">
                 <svg class="w-auto h-4 md:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0V0z" fill="none" />
                     <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z" />
@@ -35,7 +36,8 @@
         @endfor
         @if ($paginator->currentPage() < $paginator->lastPage())
             <a href="{{ $paginator->url($paginator->currentPage() + 1) }}"
-                class="px-1.5 md:px-2 py-2 font-bold fill-gray-600 bg-gray-50 rounded-md hover:bg-slate-700 border border-slate-700 hover:fill-white transition duration-300">
+                class="px-1.5 md:px-2 py-2 font-bold fill-gray-600 bg-gray-50 rounded-md hover:bg-slate-700 border border-slate-700 hover:fill-white transition duration-300"
+                aria-label="Next Button">
                 <svg class="w-auto h-4 md:h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0V0z" fill="none" />
                     <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />

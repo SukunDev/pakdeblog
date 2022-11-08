@@ -30,14 +30,7 @@ CKEDITOR.editorConfig = function (config) {
     { name: 'links', items: ['Link', 'Unlink', 'Anchor'] },
     {
       name: 'insert',
-      items: [
-        'Image',
-        'Table',
-        'HorizontalRule',
-        'SpecialChar',
-        'Code',
-        'CodeSnippet',
-      ],
+      items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
     },
     {
       name: 'code',
@@ -75,4 +68,5 @@ CKEDITOR.editorConfig = function (config) {
 
   // Simplify the dialog windows.
   config.removeDialogTabs = 'image:advanced;link:advanced'
+  config.extraAllowedContent = 'script[src]'
 }
