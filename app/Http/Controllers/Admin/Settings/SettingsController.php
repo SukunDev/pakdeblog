@@ -31,6 +31,9 @@ class SettingsController extends Controller
             'header_insert_code' => AppHelper::instance()->getOptions(
                 'header_insert_code'
             ),
+            'sidebar_insert_code' => AppHelper::instance()->getOptions(
+                'sidebar_insert_code'
+            ),
             'footer_insert_code' => AppHelper::instance()->getOptions(
                 'footer_insert_code'
             ),

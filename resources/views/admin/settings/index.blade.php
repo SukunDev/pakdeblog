@@ -114,15 +114,23 @@
                     <div class="flex flex-col">
                         <div class="flex flex-col">
                             <label class="capitalize font-medium" for="headCodeForm">Head Code</label>
-                            <textarea id="headCodeForm" rows="3"
+                            <textarea id="headCodeForm" rows="6"
                                 class="px-4 py-2 rounded-md bg-gray-100 focus:outline-gray-200 focus:bg-white focus:shadow-md transition duration-300"
                                 placeholder="tempel kode yang ingin anda sematkan" name="header_insert_code">{{ $settings['header_insert_code'] }}</textarea>
                         </div>
                     </div>
                     <div class="flex flex-col">
                         <div class="flex flex-col">
+                            <label class="capitalize font-medium" for="sidebarCodeForm">sidebar Code</label>
+                            <textarea id="sidebarCodeForm" rows="6"
+                                class="px-4 py-2 rounded-md bg-gray-100 focus:outline-gray-200 focus:bg-white focus:shadow-md transition duration-300"
+                                placeholder="tempel kode yang ingin anda sematkan" name="sidebar_insert_code">{{ $settings['sidebar_insert_code'] }}</textarea>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex flex-col">
                             <label class="capitalize font-medium" for="footerCodeForm">footer Code</label>
-                            <textarea id="footerCodeForm" rows="3"
+                            <textarea id="footerCodeForm" rows="6"
                                 class="px-4 py-2 rounded-md bg-gray-100 focus:outline-gray-200 focus:bg-white focus:shadow-md transition duration-300"
                                 placeholder="tempel kode yang ingin anda sematkan" name="footer_insert_code">{{ $settings['footer_insert_code'] }}</textarea>
                         </div>

@@ -74,6 +74,10 @@ class OptionsSeeder extends Seeder
             'value' => '',
         ]);
         Options::create([
+            'name' => 'sidebar_insert_code',
+            'value' => '',
+        ]);
+        Options::create([
             'name' => 'footer_insert_code',
             'value' => '',
         ]);
