@@ -1,4 +1,21 @@
 $(document).ready(function () {
+  var windowsize = $(window).width()
+
+  $(window).resize(function () {
+    windowsize = $(window).width()
+    if (windowsize > 576) {
+      $('#primary-nav').css('display', '')
+    }
+  })
+
+  $('#search-button').on('click', function () {
+    $('#search-item').animate(
+      {
+        opacity: 'toggle',
+      },
+      200,
+    )
+  })
   $('#primary-nav-button').on('click', function () {
     $('#primary-nav').animate(
       {

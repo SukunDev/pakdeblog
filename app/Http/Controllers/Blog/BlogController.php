@@ -16,7 +16,9 @@ class BlogController extends Controller
     {
         $posts = Posts::whereNotNull('published_at')
             ->latest('published_at')
-            ->paginate(5);
+            ->filter(request(['search']))
+            ->paginate(5)
+            ->withQueryString();
         $popularPost = Posts::whereNotNull('published_at')
             ->latest('view_count')
             ->limit(3)
