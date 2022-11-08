@@ -20,12 +20,12 @@
                 </a>
             </div>
             <div class="w-full sm:basis-4/6 mt-6 sm:-mt-1">
-                <h2
+                <p
                     class="text-base font-medium text-gray-600 hover:text-gray-500 transition duration-300 line-clamp-2 sm:line-clamp-1 lg:line-clamp-2">
                     <a href="/{{ $post->slug }}" title="{{ $post->title }}">
                         {{ $post->title }}
                     </a>
-                </h2>
+                </p>
                 <div class="flex flex-wrap items-center my-1 gap-4 text-xs font-medium text-gray-500">
                     <span class="flex md:hidden lg:flex items-center gap-1">
                         <svg class="w-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -50,15 +50,16 @@
                     class="block md:hidden my-4 sm:mt-3 sm:mb-0 text-sm md:text-base line-clamp-3 sm:line-clamp-2 text-gray-600">
                     <p>{{ $post->excerpt }}</p>
                 </div>
-                <a class="flex sm:hidden items-center gap-2 capitalize w-fit px-4 py-1.5 rounded-full border-2 border-transparent hover:border-blue-400 hover:text-blue-500 transition duration-300 text-sm"
-                    href="/{{ $post->slug }}" title="{{ $post->title }}">
+                <button onclick="window.location.href='/{{ $post->slug }}'"
+                    class="flex sm:hidden items-center gap-2 capitalize w-fit px-4 py-1.5 rounded-full border-2 border-transparent hover:border-blue-400 hover:text-blue-500 transition duration-300 text-sm"
+                    title="{{ $post->title }}">
                     read more
                     <svg class="w-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                         <path
                             d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
                     </svg>
-                </a>
+                </button>
             </div>
         </article>
     @endforeach

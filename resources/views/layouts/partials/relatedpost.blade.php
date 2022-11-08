@@ -21,11 +21,11 @@
                     </a>
                 </div>
                 <div class="mt-6">
-                    <h2
+                    <p
                         class="text-lg sm:text-base font-semibold transition duration-300 hover:text-slate-400 line-clamp-2 sm:line-clamp-1">
                         <a href="/{{ $post->slug }}" title="{{ $post->title }}">{{ $post->title }}
                         </a>
-                    </h2>
+                    </p>
                     <div class="flex sm:hidden items-center my-2 gap-8 text-xs font-medium text-gray-500">
                         <span class="flex items-center gap-1">
                             <svg class="w-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -49,15 +49,16 @@
                     <div class="block sm:hidden my-4 line-clamp-3 text-sm md:text-base text-gray-600">
                         <p>{{ $post->excerpt }}</p>
                     </div>
-                    <a class="flex sm:hidden items-center gap-2 capitalize w-fit px-4 py-1.5 rounded-full border-2 border-transparent hover:border-blue-400 hover:text-blue-500 transition duration-300 text-sm"
-                        href="/{{ $post->slug }}" title="{{ $post->title }}">
+                    <button onclick="window.location.href='/{{ $post->slug }}'"
+                        class="flex sm:hidden items-center gap-2 capitalize w-fit px-4 py-1.5 rounded-full border-2 border-transparent hover:border-blue-400 hover:text-blue-500 transition duration-300 text-sm"
+                        title="{{ $post->title }}">
                         read more
                         <svg class="w-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                             <path
                                 d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z" />
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </article>
         @endforeach
