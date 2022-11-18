@@ -133,7 +133,7 @@
                         $('#slugForm').val(permalinkSlug)
                         var permalink = $('#permalink')
                         permalink.find('span').text(
-                            "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/p/" +
+                            "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/" +
                             permalinkSlug)
                         permalink.show()
                     })
@@ -143,13 +143,13 @@
                 $(this).hide()
                 var permalink = $('#permalink')
                 permalink.find('span').text(
-                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/p/")
+                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/")
             })
             $('#permalink-ok').on('click', function() {
                 permalinkSlug = $('#slugForm').val()
                 var permalink = $('#permalink')
                 permalink.find('span').text(
-                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/p/" +
+                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/" +
                     permalinkSlug
                 )
                 $('#edit-permalink').hide()
@@ -159,17 +159,17 @@
                 var permalink = $('#permalink')
                 $('#slugForm').val(permalinkSlug)
                 permalink.find('span').text(
-                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/p/" +
+                    "{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/" +
                     permalinkSlug
                 )
                 $('#edit-permalink').hide()
                 $('#permalink-edit').show()
             })
             var content = CKEDITOR.replace('editor', {
-                filebrowserImageBrowseUrl: '/admin/laravel-filemanager?type=Images',
-                filebrowserImageUploadUrl: '/admin/laravel-filemanager/upload?type=Images&_token=',
-                filebrowserBrowseUrl: '/admin/laravel-filemanager?type=Files',
-                filebrowserUploadUrl: '/admin/laravel-filemanager/upload?type=Files&_token='
+                filebrowserImageBrowseUrl: '/ngadimin/laravel-filemanager?type=Images',
+                filebrowserImageUploadUrl: '/ngadimin/laravel-filemanager/upload?type=Images&_token=',
+                filebrowserBrowseUrl: '/ngadimin/laravel-filemanager?type=Files',
+                filebrowserUploadUrl: '/ngadimin/laravel-filemanager/upload?type=Files&_token='
             });
             $('#metaDiscriptionForm').keyup(function() {
                 metaCharacterCount()
