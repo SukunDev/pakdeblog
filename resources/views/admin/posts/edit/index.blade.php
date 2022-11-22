@@ -12,7 +12,7 @@
                 </div>
                 <div id="permalink" class="px-1 flex items-center">
                     <p class="font-medium line-clamp-1">Permalink: <span
-                            class="text-blue-500 hover:underline font-normal cursor-pointer">{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/{{ $post->title }}</span>
+                            class="text-blue-500 hover:underline font-normal cursor-pointer">{{ App\Helpers\AppHelper::instance()->getOptions('site_url') }}/{{ $post->slug }}</span>
                     </p>
                     <div id="edit-permalink" class="flex items-end" style="display: none">
                         <input
